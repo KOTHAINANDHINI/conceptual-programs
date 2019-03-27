@@ -1,0 +1,60 @@
+#include<stdio.h>
+int main()
+{
+    int a[1000],n,i,j=0,b[100],c[100],m=0,k,l,min;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(a[i]%2==0&&a[i+1]%2==0)
+        {
+            b[j]=a[i];
+            j++;
+            b[j]=a[i+1];
+            j++;
+        }
+        if(a[i]%2!=0&&a[i+1]%2!=0)
+        {
+             k=i;
+            break;
+        }
+    }
+    for(i=k;i<n;i++)
+    {
+         if(a[i]%2==0&&a[i+1]%2==0)
+        {
+            c[m]=a[i];
+            m++;
+            c[m]=a[i+1];
+            m++;
+        }
+    }
+    if(j>m)
+    {
+        min=b[0];
+        for(i=0;i<j;i++)
+        {
+            if(min>b[i])
+            {
+                min=b[i];
+            }
+            
+        }
+    }
+    else
+    {
+        min=c[0];
+        for(l=0;l<m;l++)
+        {
+            if(min>c[l])
+            {
+                min=c[l];
+            }
+        }   
+    }
+    printf("%d",min);
+    return 0;
+}
